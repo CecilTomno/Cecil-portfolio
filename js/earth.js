@@ -214,6 +214,7 @@
     nightMap: gl.getUniformLocation(program, "uNightMap"),
     light: gl.getUniformLocation(program, "uLightDirection")
   };
+  var markers = Array.prototype.slice.call(orbit.querySelectorAll(".earth-marker"));
 
   gl.enable(gl.DEPTH_TEST);
   gl.enable(gl.CULL_FACE);
@@ -229,6 +230,40 @@
     canvas.height = Math.max(1, Math.round(height * pixelRatio));
     gl.viewport(0, 0, canvas.width, canvas.height);
     start();
+  }
+
+  function positionMarkers(model, aspect, focalLength) {
+    markers.forEach(function (marker) {
+      var lat = Number(marker.getAttribute("data-lat")) * Math.PI / 180;
+      var lon = Number(marker.getAttribute("data-lon")) * Math.PI / 180;
+      var cosLat = Math.cos(lat);
+      var x = cosLat * Math.sin(lon);
+      var y = Math.sin(lat);
+      var z = cosLat * Math.cos(lon);
+      var rotatedX = model[0] * x + model[4] * y + model[8] * z;
+      var rotatedY = model[1] * x + model[5] * y + model[9] * z;
+      var rotatedZ = model[2] * x + model[6] * y + model[10] * z;
+
+      if (rotatedZ < 0.06) {
+        marker.hidden = true;
+        return;
+      }
+
+      var cameraZ = rotatedZ - 3.25;
+      var perspective = -1 / cameraZ;
+      var screenX = focalLength * rotatedX * perspective / aspect;
+      var screenY = focalLength * rotatedY * perspective;
+      if (Math.abs(screenX) > 0.98 || Math.abs(screenY) > 0.98) {
+        marker.hidden = true;
+        return;
+      }
+
+      marker.hidden = false;
+      marker.style.left = ((screenX + 1) * 50) + "%";
+      marker.style.top = ((1 - screenY) * 50) + "%";
+      marker.style.opacity = String(Math.min(1, 0.42 + rotatedZ * 0.72));
+      marker.style.zIndex = String(Math.round(rotatedZ * 100));
+    });
   }
 
   function render() {
@@ -251,6 +286,7 @@
     var aspect = width / height;
     var globeFill = Math.min(1, aspect) * 0.94;
     var fov = 2 * Math.atan(1 / (3.25 * globeFill));
+    var focalLength = 1 / Math.tan(fov / 2);
     var projection = perspective(fov, aspect, 0.1, 20);
     gl.uniformMatrix4fv(locations.modelView, false, modelView);
     gl.uniformMatrix4fv(locations.projection, false, projection);
@@ -262,6 +298,7 @@
     gl.bindTexture(gl.TEXTURE_2D, nightTexture);
     gl.uniform1i(locations.nightMap, 1);
     gl.drawElements(gl.TRIANGLES, sphere.count, gl.UNSIGNED_SHORT, 0);
+    positionMarkers(model, aspect, focalLength);
   }
 
   function animate(now) {
