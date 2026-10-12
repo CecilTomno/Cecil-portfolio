@@ -4,7 +4,7 @@
   position: relative;
   isolation: isolate;
   width: 100%;
-  height: clamp(24rem, 46vw, 43rem);
+  height: clamp(26rem, 49vw, 46rem);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
   border-radius: clamp(1.4rem, 3vw, 2.6rem);
@@ -80,7 +80,7 @@
   background:
     radial-gradient(ellipse at 32% 25%, rgba(255, 255, 255, 0.25), transparent 43%),
     radial-gradient(ellipse at 64% 68%, transparent 44%, rgba(0, 0, 0, 0.82) 100%),
-    url("https://cdn.jsdelivr.net/npm/three@0.186.0/examples/textures/planets/earth_atmos_2048.jpg") center / auto 100% no-repeat,
+    url("https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg") center / auto 100% no-repeat,
     #122536;
   box-shadow: inset -1.5rem -0.4rem 2rem rgba(0, 0, 0, 0.56), 0 0 3rem rgba(64, 143, 255, 0.32);
   transform: translate(-50%, -50%);
@@ -88,7 +88,7 @@
 .earth-orbit.fallback .earth-canvas { display: none; }
 .earth-orbit.fallback .earth-fallback { display: block; }
 @media (max-width: 63.99rem) {
-  .earth-orbit { width: min(100%, 42rem); height: clamp(22rem, 95vw, 38rem); margin-inline: auto; }
+  .earth-orbit { width: min(100%, 44rem); height: clamp(24rem, 98vw, 41rem); margin-inline: auto; }
   .hero { gap: 2rem; }
   h1 { max-width: 10ch; }
 }

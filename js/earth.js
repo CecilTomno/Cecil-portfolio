@@ -7,8 +7,14 @@
   if (!canvas || !orbit) return;
 
   var gl = canvas.getContext("webgl", { alpha: true, antialias: true, powerPreference: "low-power" });
-  var dayTextureUrl = "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/textures/planets/earth_atmos_2048.jpg";
-  var nightTextureUrl = "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/textures/planets/earth_lights_2048.png";
+  var dayTextureUrls = [
+    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg",
+    "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
+  ];
+  var nightTextureUrls = [
+    "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_lights_2048.png",
+    "https://threejs.org/examples/textures/planets/earth_lights_2048.png"
+  ];
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function setStatus(message) {
@@ -155,25 +161,34 @@
     return out;
   }
 
-  function loadTexture(url, optional, onLoad) {
-    var image = new Image();
-    image.crossOrigin = "anonymous";
-    image.onload = function () {
-      var texture = gl.createTexture();
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
-      gl.generateMipmap(gl.TEXTURE_2D);
-      onLoad(texture);
-    };
-    image.onerror = function () {
-      if (!optional) useFallback("Earth imagery could not load");
-    };
-    image.src = url;
+  function loadTexture(urls, optional, onLoad) {
+    var index = 0;
+    function tryNextSource() {
+      if (index >= urls.length) {
+        if (!optional) useFallback("Earth imagery could not load");
+        return;
+      }
+      var image = new Image();
+      image.crossOrigin = "anonymous";
+      image.onload = function () {
+        var texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+        gl.generateMipmap(gl.TEXTURE_2D);
+        onLoad(texture);
+      };
+      image.onerror = function () {
+        index += 1;
+        tryNextSource();
+      };
+      image.src = urls[index];
+    }
+    tryNextSource();
   }
 
   var program, sphere, dayTexture = null, nightTexture = null;
@@ -234,7 +249,7 @@
     var view = new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -3.25, 1]);
     var modelView = multiply(view, model);
     var aspect = width / height;
-    var globeFill = Math.min(1, aspect) * 0.86;
+    var globeFill = Math.min(1, aspect) * 0.94;
     var fov = 2 * Math.atan(1 / (3.25 * globeFill));
     var projection = perspective(fov, aspect, 0.1, 20);
     gl.uniformMatrix4fv(locations.modelView, false, modelView);
@@ -330,14 +345,14 @@
   }
 
   resize();
-  loadTexture(dayTextureUrl, false, function (texture) {
+  loadTexture(dayTextureUrls, false, function (texture) {
     dayTexture = texture;
     ready = true;
     setStatus("");
     render();
     start();
   });
-  loadTexture(nightTextureUrl, true, function (texture) {
+  loadTexture(nightTextureUrls, true, function (texture) {
     nightTexture = texture;
     render();
   });
