@@ -1,0 +1,23 @@
+/* Design tokens. Change colors and fonts here and the whole site follows.
+   Light mode is the default. Dark mode swaps black and white, so the black blocks become white ones. */
+:root {
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #666666;
+  --blk: #0a0a0a;
+  --blk-2: #151515;
+  --on-blk: #ffffff;
+  --display: "Abril Fatface", "Bodoni 72", "Didot", Georgia, serif;
+  --body: "Old Standard TT", "Century Schoolbook", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+/* Dark mode swaps black and white everywhere, so the black blocks become white ones */
+:root[data-mode="dark"] {
+  --bg: #0a0a0a;
+  --fg: #ffffff;
+  --muted: #a6a6a6;
+  --blk: #ffffff;
+  --blk-2: #ececec;
+  --on-blk: #0a0a0a;
+  color-scheme: dark;
+}

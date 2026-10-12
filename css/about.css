@@ -1,0 +1,64 @@
+/* About, numbers strip, skills grid, process steps and the maxim */
+/* About */
+.about { position: relative; z-index: 30; padding-block: clamp(3rem, 7vw, 6rem) 0; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; align-items: end; }
+.about-main { display: flex; flex-direction: column; gap: clamp(1.5rem, 5vw, 5rem); min-width: 0; }
+.statement { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.015em; }
+.about-side { display: flex; flex-direction: column; gap: 1.6rem; align-items: flex-start; max-width: 22rem; }
+.seal { width: 11rem; height: 11rem; }
+.seal circle { fill: none; stroke: var(--fg); }
+.seal text { fill: var(--fg); }
+.about-side p { font-size: 1.1rem; }
+@media (min-width: 64rem) { .about-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 4rem; } .about-side { justify-self: end; } }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 2rem 1.5rem; margin-top: clamp(3rem, 7vw, 6rem); padding-block: 1.75rem; border-block: 3px double var(--fg); }
+.stat { display: flex; flex-direction: column; gap: 0.3rem; }
+.stat-n { font-family: var(--display); font-size: clamp(3.2rem, 7vw, 5.5rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat .label { color: var(--muted); }
+.process { position: relative; z-index: 30; padding-block: clamp(4rem, 9vw, 8rem) 0; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2.5rem 2rem; }
+.step { position: relative; display: flex; flex-direction: column; gap: 0.7rem; padding-top: 1.4rem; min-width: 0; }
+.step::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--fg); transform-origin: left; }
+.step h3 { font-size: 1.6rem; line-height: 1.1; }
+.step p { color: var(--muted); }
+.sn { font-family: var(--display); font-size: clamp(3.2rem, 6vw, 4.8rem); line-height: 1; -webkit-text-stroke: 1.5px var(--fg); }
+.steps.arm .step::before { transform: scaleX(0); transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s); }
+.steps.arm .sn { color: transparent; transition: color 0.6s ease var(--d, 0s); }
+.steps.arm.in .step::before { transform: scaleX(1); }
+.steps.arm.in .sn { color: var(--fg); }
+.step:nth-child(1) { --d: 0s; } .step:nth-child(2) { --d: 0.14s; } .step:nth-child(3) { --d: 0.28s; } .step:nth-child(4) { --d: 0.42s; } .step:nth-child(5) { --d: 0.56s; }
+
+/* Skills */
+.skills { position: relative; z-index: 30; padding-block: clamp(4rem, 9vw, 8rem) 0; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.sec-head h2 { font-size: clamp(2.5rem, 5.5vw, 4.4rem); line-height: 1.08; letter-spacing: -0.015em; }
+.sec-head .lead { display: flex; flex-direction: column; gap: 1.4rem; }
+.sec-head p { font-size: 1.15rem; max-width: 30rem; }
+@media (min-width: 64rem) { .sec-head { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 4rem; align-items: end; } }
+.skill-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); gap: 1rem; border-top: 3px double var(--fg); padding-top: 1.75rem; }
+.skill {
+  --c: var(--fg); --t: var(--bg);
+  width: 100%; min-height: 8rem;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 1.6rem;
+  text-align: left; font: inherit; color: var(--fg);
+  background: var(--bg); border: 2px solid var(--fg); border-radius: 0.9rem;
+  padding: 1rem 1.2rem 1.1rem; cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.skill .top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.skill .cat { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.skill .dot { width: 0.9rem; height: 0.9rem; border-radius: 50%; border: 2px solid currentColor; flex: none; transition: background-color 0.2s; }
+.skill .nm { font-family: var(--display); font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.05; overflow-wrap: anywhere; }
+.skill.on, .skill:focus-visible { background: var(--c); color: var(--t); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--fg); }
+.skill.on .dot, .skill:focus-visible .dot { background: currentColor; }
+@media (hover: hover) {
+  .skill:hover { background: var(--c); color: var(--t); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--fg); }
+  .skill:hover .dot { background: currentColor; }
+}
+
+.maxim { position: relative; z-index: 30; padding-block: clamp(4rem, 9vw, 8rem); text-align: center; }
+.maxim .wrap { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+.maxim .eyebrow { justify-content: center; }
+.maxim blockquote { margin: 0; max-width: 56rem; font-family: var(--display); font-size: clamp(2rem, 5.2vw, 3.8rem); line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
+.maxim cite { font-style: italic; font-size: 1.1rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .skill, .skill:hover, .skill.on, .skill:focus-visible { transform: none; transition: none; } }

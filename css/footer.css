@@ -1,0 +1,31 @@
+/* Closing call to action and the footer slab */
+/* Closing block: call to action + white footer slab */
+.block-end {
+  position: relative; z-index: 60;
+  background: var(--blk); color: var(--on-blk);
+  border-radius: 2.5rem 2.5rem 0 0;
+  margin-top: -3rem;
+  padding-block: clamp(5rem, 10vw, 9rem) 1rem;
+}
+.cta-big { text-align: center; max-width: 60rem; margin-inline: auto; padding-bottom: clamp(4rem, 9vw, 8rem); }
+.cta-big h2 { font-size: clamp(2.6rem, 6.5vw, 5.2rem); line-height: 1.08; letter-spacing: -0.015em; }
+.foot {
+  background: var(--bg); color: var(--fg);
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  display: flex; flex-direction: column; gap: clamp(2.5rem, 6vw, 4.5rem);
+}
+.foot-top { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+.foot-left { display: flex; flex-direction: column; gap: 1.8rem; align-items: flex-start; }
+.foot .btn:hover { background: var(--fg); color: var(--bg); }
+.foot-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 2rem; min-width: 0; }
+.foot-col { display: flex; flex-direction: column; gap: 0.7rem; min-width: 0; }
+.foot-col .label { color: var(--muted); }
+.foot-col a { text-decoration: none; font-size: 1.2rem; width: fit-content; }
+.foot-col a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+.addr { font-size: 1.2rem; font-style: italic; overflow-wrap: anywhere; user-select: all; }
+@media (min-width: 64rem) { .foot-top { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 4rem; } }
+.foot-rule { border: 0; border-top: 3px double var(--fg); margin: 0; }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; }
+.wordmark { font-family: var(--display); font-size: clamp(4.5rem, 20vw, 13rem); line-height: 0.85; text-transform: uppercase; letter-spacing: -0.01em; }
+.foot-bottom .label { margin-top: 0.8rem; padding-left: 0.3rem; }
