@@ -1,0 +1,19 @@
+/* Floating pill header, plus the small-screen tweak that shortens the button */
+/* Header pill */
+.topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: calc(0.8rem + env(safe-area-inset-top, 0px)) 1rem 0.8rem; }
+.pill {
+  max-width: 90rem; margin-inline: auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.5rem 0.55rem 0.5rem 1.4rem;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.brand { font-family: var(--display); font-size: 1.7rem; text-decoration: none; line-height: 1; }
+.nav { display: none; gap: 1.8rem; }
+.nav a { text-decoration: none; font-size: 0.95rem; }
+.nav a:hover { text-decoration: underline; text-underline-offset: 0.3em; }
+.pill .btn:hover { background: var(--fg); color: var(--bg); }
+@media (min-width: 48rem) { .nav { display: flex; } .pill { padding-left: 1.8rem; } }
+@media (max-width: 34rem) { .hide-sm { display: none; } .pill .btn { padding: 0.6rem 1rem; } }

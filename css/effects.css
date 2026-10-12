@@ -1,0 +1,31 @@
+/* Floating particles, the typeset loader and the scroll rule */
+/* Floating particles: sit between a block's background and its content, so the wording stays on top */
+.zone { position: relative; isolation: isolate; }
+.fx { position: absolute; inset: 0; z-index: -1; overflow: hidden; border-radius: inherit; pointer-events: none; color: var(--fg); }
+.block-iron .fx, .block-end .fx { color: var(--on-blk); }
+.fx-layer { position: absolute; left: 0; right: 0; will-change: transform; }
+.pt { position: absolute; display: block; width: var(--s); height: var(--s); opacity: var(--o); }
+.pt.dot { border-radius: 50%; background: currentColor; }
+.pt.dia { background: currentColor; rotate: 45deg; }
+.pt.ring { border: 1px solid currentColor; border-radius: 50%; }
+.pt.plus::before, .pt.plus::after { content: ""; position: absolute; background: currentColor; }
+.pt.plus::before { left: 0; right: 0; top: 50%; height: 1px; }
+.pt.plus::after { top: 0; bottom: 0; left: 50%; width: 1px; }
+.pt.an { animation: drift var(--dur) ease-in-out var(--dly) infinite alternate; }
+@keyframes drift { to { transform: translate3d(var(--dx), var(--dy), 0); } }
+[data-fx-off] .pt.an { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .pt.an { animation: none; } }
+
+#boot { position: fixed; inset: 0; z-index: 500; background: var(--blk); color: var(--on-blk); display: grid; place-items: center; transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1); }
+#boot.out { transform: translateY(-100%); }
+.boot-in { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; padding: 1rem; }
+.boot-mark { font-family: var(--display); font-size: clamp(3.5rem, 14vw, 7rem); line-height: 1; }
+.boot-line { font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; }
+.boot-bar { display: block; width: min(16rem, 70vw); height: 2px; background: color-mix(in srgb, var(--on-blk) 25%, transparent); overflow: hidden; }
+.boot-bar i { display: block; height: 100%; background: var(--on-blk); transform-origin: left; animation: bootfill 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards; }
+@keyframes bootfill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.caret { font-weight: 400; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; height: 3px; z-index: 150; pointer-events: none; mix-blend-mode: difference; }
+.progress i { display: block; height: 100%; background: #ffffff; transform-origin: left; transform: scaleX(0); }
+@media (prefers-reduced-motion: reduce) { .caret, .boot-bar i { animation: none; } }

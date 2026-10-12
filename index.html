@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cecil Portfolio</title>
+  <meta name="description" content="Cecil is a web and app developer. Websites, mobile applications, web systems and video tutorials.">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/theme-switch.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/work.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <script src="js/theme-init.js"></script>
+</head>
+<body>
+<script src="js/loader.js"></script>
+<div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+<div class="lantern" id="lantern" aria-hidden="true"></div>
+
+<div class="page">
+
+  <header class="topbar" id="top">
+    <div class="pill">
+      <a class="brand" href="#top">Cecil.</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="pill-actions">
+        <button class="mode" id="mode" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch between light and dark">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12.5 7.5a3.5 3.5 0 0 1 7 0"/>
+            <path d="M11 9h10l-1.5 3h-7z"/>
+            <path d="M12.5 12h7v8a3.5 3.5 0 0 1-7 0z"/>
+            <path d="M10 25.5h12"/>
+            <path class="flame" d="M16 14.2c1.9 1.9 2.3 3.6 0 5.6-2.3-2-1.9-3.7 0-5.6z" fill="currentColor" stroke="none"/>
+            <path class="rays" d="M5 15h3M24 15h3M7 8l2 2M25 8l-2 2"/>
+          </svg>
+        </button>
+        <a class="btn" href="#contact">Commission<span class="hide-sm"> a work</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="zone" data-fx>
+    <!-- Hero: two layered panels -->
+    <section class="wrap hero" aria-label="Introduction">
+      <div class="panel-a">
+        <div class="hero-card">
+          <div class="hero-left">
+            <a class="cta-link" href="#contact">Commission a work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <p class="label typed" aria-hidden="true">Now making <b><span id="typed">Websites</span><span class="caret">_</span></b></p>
+            <p class="lede">I am Cecil. I design and build websites and mobile applications that load quickly, read clearly and keep working long after launch.</p>
+          </div>
+          <h1>Web &amp; App Maker.</h1>
+        </div>
+      </div>
+
+      <div class="panel-b" data-fx>
+        <div class="triplet label">
+          <span>Plain to use</span>
+          <span>Quick to load</span>
+          <span>Built to last</span>
+        </div>
+        <div class="plate-hero">
+          <svg class="plate-art" viewBox="0 0 800 460" role="img" aria-label="Engraving of a browser window beside a mobile phone">
+            <defs>
+              <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" class="p-line" stroke-width="1.5"/></pattern>
+              <pattern id="hatch2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="5" class="p-line" stroke-width="1.1"/></pattern>
+            </defs>
+            <rect x="70" y="60" width="480" height="330" rx="8" class="fill-paper stroke-ink" stroke-width="3"/>
+            <path d="M70 98V68a8 8 0 0 1 8-8h464a8 8 0 0 1 8 8v30z" class="fill-ink"/>
+            <circle cx="92" cy="79" r="5" class="fill-paper"/><circle cx="110" cy="79" r="5" class="fill-paper"/><circle cx="128" cy="79" r="5" class="fill-paper"/>
+            <rect x="160" y="70" width="240" height="18" rx="9" class="fill-paper" opacity="0.3"/>
+            <rect x="100" y="132" width="250" height="22" class="fill-ink"/>
+            <rect x="100" y="166" width="180" height="22" class="fill-ink"/>
+            <rect x="100" y="208" width="270" height="8" class="fill-ink" opacity="0.55"/>
+            <rect x="100" y="226" width="240" height="8" class="fill-ink" opacity="0.55"/>
+            <rect x="100" y="244" width="255" height="8" class="fill-ink" opacity="0.55"/>
+            <rect x="100" y="278" width="110" height="32" rx="16" class="fill-ink"/>
+            <rect x="385" y="124" width="135" height="150" fill="url(#hatch)" class="stroke-ink" stroke-width="2"/>
+            <rect x="100" y="332" width="420" height="36" fill="url(#hatch2)" class="stroke-ink" stroke-width="2"/>
+            <rect x="520" y="130" width="190" height="300" rx="26" class="fill-paper stroke-ink" stroke-width="3"/>
+            <rect x="585" y="146" width="60" height="9" rx="4.5" class="fill-ink"/>
+            <rect x="545" y="184" width="120" height="16" class="fill-ink"/>
+            <rect x="545" y="208" width="88" height="16" class="fill-ink"/>
+            <rect x="545" y="246" width="140" height="82" fill="url(#hatch)" class="stroke-ink" stroke-width="2"/>
+            <rect x="545" y="346" width="130" height="7" class="fill-ink" opacity="0.55"/>
+            <rect x="545" y="362" width="100" height="7" class="fill-ink" opacity="0.55"/>
+            <rect x="545" y="386" width="140" height="28" rx="14" class="fill-ink"/>
+          </svg>
+          <aside class="float-card">
+            <p>From the first sketch to the final release, one developer sees the whole job through.</p>
+            <a class="cta-link" href="#work">View selected work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticker: what is made -->
+    <section class="marquee marquee-big" aria-label="Services">
+      <div class="track">
+        <div class="set"><span>Websites</span><i></i><span>Mobile Apps</span><i></i><span>Web Systems</span><i></i></div>
+        <div class="set" aria-hidden="true"><span>Websites</span><i></i><span>Mobile Apps</span><i></i><span>Web Systems</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-main">
+          <p class="label eyebrow">The maker</p>
+          <h2 class="statement">I build for the person holding the telephone <span class="muted">and keep every page quick, plain and made to last, as a good printed bill was.</span></h2>
+        </div>
+        <div class="about-side">
+          <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Seal reading Cecil, Web and App Developer, Anno 2026">
+            <defs><path id="seal-ring" d="M100 100 m-70 0 a70 70 0 1 1 140 0 a70 70 0 1 1 -140 0"/></defs>
+            <circle cx="100" cy="100" r="96" stroke-width="2"/>
+            <circle cx="100" cy="100" r="90" stroke-width="1"/>
+            <circle cx="100" cy="100" r="50" stroke-width="1.5"/>
+            <text font-size="13" font-weight="700" letter-spacing="2" font-family="Old Standard TT, Georgia, serif"><textPath href="#seal-ring" textLength="432" lengthAdjust="spacing">CECIL · WEB &amp; APP DEVELOPER · ANNO 2026 ·</textPath></text>
+            <text x="100" y="120" text-anchor="middle" font-size="58" font-family="Abril Fatface, Georgia, serif">C</text>
+          </svg>
+          <p>I work with people and small businesses who need something real on the web or on a phone. Every project gets the same care: clear structure, honest estimates and code you can hand to someone else.</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="stats" aria-label="At a glance">
+          <div class="stat"><span class="stat-n" data-count-of=".skill">14</span><span class="label">Tools in use</span></div>
+          <div class="stat"><span class="stat-n" data-count-of=".card">3</span><span class="label">Kinds of work</span></div>
+          <div class="stat"><span class="stat-n" data-count-of=".lesson">6</span><span class="label">Tutorials</span></div>
+          <div class="stat"><span class="stat-n">1</span><span class="label">Developer, start to finish</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills: black and white until touched -->
+    <section class="skills" id="skills" aria-labelledby="skills-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="lead">
+            <p class="label eyebrow">Skills</p>
+            <h2 id="skills-h">The tools I work with, <span class="muted">each in its own color.</span></h2>
+          </div>
+          <p>Hover over a tool, or tap it on a phone, to see it in the colors of its software.</p>
+        </div>
+        <ul class="skill-grid">
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#E34F26;--t:#0a0a0a"><span class="top"><span class="cat">Markup</span><i class="dot"></i></span><span class="nm">HTML</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#1572B6;--t:#ffffff"><span class="top"><span class="cat">Styling</span><i class="dot"></i></span><span class="nm">CSS</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#F7DF1E;--t:#0a0a0a"><span class="top"><span class="cat">Language</span><i class="dot"></i></span><span class="nm">JavaScript</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#3178C6;--t:#ffffff"><span class="top"><span class="cat">Language</span><i class="dot"></i></span><span class="nm">TypeScript</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#61DAFB;--t:#0a0a0a"><span class="top"><span class="cat">Library</span><i class="dot"></i></span><span class="nm">React</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:var(--fg);--t:var(--bg)"><span class="top"><span class="cat">Framework</span><i class="dot"></i></span><span class="nm">Next.js</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#5FA04E;--t:#0a0a0a"><span class="top"><span class="cat">Runtime</span><i class="dot"></i></span><span class="nm">Node.js</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#54C5F8;--t:#0a0a0a"><span class="top"><span class="cat">Mobile</span><i class="dot"></i></span><span class="nm">Flutter</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#7F52FF;--t:#ffffff"><span class="top"><span class="cat">Mobile</span><i class="dot"></i></span><span class="nm">Kotlin</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#3DDC84;--t:#0a0a0a"><span class="top"><span class="cat">Platform</span><i class="dot"></i></span><span class="nm">Android</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#336791;--t:#ffffff"><span class="top"><span class="cat">Database</span><i class="dot"></i></span><span class="nm">PostgreSQL</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#FFCA28;--t:#0a0a0a"><span class="top"><span class="cat">Back end</span><i class="dot"></i></span><span class="nm">Firebase</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#F05032;--t:#0a0a0a"><span class="top"><span class="cat">Version control</span><i class="dot"></i></span><span class="nm">Git</span></button></li>
+          <li><button class="skill" type="button" aria-pressed="false" style="--c:#A259FF;--t:#0a0a0a"><span class="top"><span class="cat">Design</span><i class="dot"></i></span><span class="nm">Figma</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Process: five steps, drawn in as they scroll into view -->
+    <section class="process" id="process" aria-labelledby="proc-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="lead">
+            <p class="label eyebrow">Process</p>
+            <h2 id="proc-h">How a commission goes <span class="muted">from first word to launch.</span></h2>
+          </div>
+          <p>Five steps, the same every time, so you always know what comes next.</p>
+        </div>
+        <ol class="steps" id="steps">
+          <li class="step"><span class="sn">1</span><h3>Talk</h3><p>We agree what to make, for whom, and what must work on the first day.</p></li>
+          <li class="step"><span class="sn">2</span><h3>Sketch</h3><p>Rough screens and a written scope, approved by you before any code.</p></li>
+          <li class="step"><span class="sn">3</span><h3>Build</h3><p>Working versions shared early and often, so nothing arrives as a surprise.</p></li>
+          <li class="step"><span class="sn">4</span><h3>Test</h3><p>Checked on real phones, on slow connections and on small screens.</p></li>
+          <li class="step"><span class="sn">5</span><h3>Launch</h3><p>Hosting, domain and store listings set up, with every login handed over.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="maxim" aria-label="Maxim">
+      <div class="wrap">
+        <p class="label eyebrow">Maxim</p>
+        <blockquote>Make it fast. Make it plain. <span class="muted">Make it last longer than the fashion that inspired it.</span></blockquote>
+        <cite>Cecil</cite>
+      </div>
+    </section>
+
+    </div><!-- /zone -->
+
+    <!-- Black block: services and questions -->
+    <div class="block-iron" data-fx>
+      <section class="wrap svc" id="services">
+        <div>
+          <div class="stick">
+            <div class="svc-left">
+              <p class="label eyebrow">What I make</p>
+              <h2>Websites and apps <span class="dim">built to be used.</span></h2>
+              <p>Each commission starts with a conversation about who will use the thing and what they need to finish. The design and the code follow from that.</p>
+              <a class="cta-link" href="#tutorials">Watch the tutorials
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="svc-right">
+          <div class="stack">
+            <article class="card">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M6.5 6.5h.01"/></svg></div>
+              <h3>Websites</h3>
+              <p>Portfolios, business sites, shops and booking pages. Clean, accessible markup means they load fast on any connection and read well on any screen.</p>
+              <ul class="tags"><li>Responsive layouts</li><li>Fast loading</li><li>Easy to update</li></ul>
+            </article>
+          </div>
+          <div class="stack">
+            <article class="card">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div>
+              <h3>Mobile applications</h3>
+              <p>Android and iOS apps from the first sketch to the store listing, including mobile money payments and tools that keep working without a connection.</p>
+              <ul class="tags"><li>Android</li><li>iOS</li><li>Offline first</li></ul>
+            </article>
+          </div>
+          <div class="stack">
+            <article class="card">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+              <h3>Web systems &amp; APIs</h3>
+              <p>Dashboards, admin tools and the back ends behind them. Databases, sign-in and integrations, written up so the next person can pick them up.</p>
+              <ul class="tags"><li>Dashboards</li><li>Databases</li><li>Integrations</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap faq" aria-labelledby="faq-h">
+        <div class="faq-intro">
+          <h2 id="faq-h">Frequently asked <span class="dim">questions</span></h2>
+          <p>What to expect when you commission a work, from the first message to the final handover.</p>
+        </div>
+        <div class="qa-list">
+          <details class="qa" open>
+            <summary>How does a project begin?</summary>
+            <p>We talk through what you want to make, who will use it and what must work on the first day. I then send back a plain written scope and a schedule for your approval before any work starts.</p>
+          </details>
+          <details class="qa">
+            <summary>What do you build with?</summary>
+            <p>I choose tools to fit the job: React and Next.js for the web, Flutter or Kotlin for apps, and Node with PostgreSQL or Firebase behind them. You are never tied to anything obscure.</p>
+          </details>
+          <details class="qa">
+            <summary>Do you handle hosting and launch?</summary>
+            <p>Yes. I set up hosting, the domain and the store listings, and when the work is done I hand over every login together with a short written guide.</p>
+          </details>
+          <details class="qa">
+            <summary>Can you improve something that already exists?</summary>
+            <p>Yes. I can review an existing site or app, fix what is slow or broken, and add new features without rewriting what already works.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+
+    <!-- White block: work -->
+    <div class="block-paper" data-fx>
+      <section class="wrap" id="work" aria-labelledby="work-h">
+        <div class="sec-head">
+          <div class="lead">
+            <p class="label eyebrow">Selected work</p>
+            <h2 id="work-h">Things made, <span class="muted">plainly and well.</span></h2>
+          </div>
+          <p>A few specimens of recent commissions. Each entry will carry a short account of the problem, the build and the result.</p>
+        </div>
+
+        <!-- Replace these specimen entries with real projects; keep the same structure. -->
+        <div class="work-grid">
+          <article class="work">
+            <div class="plate p1"><span class="label">Specimen plate</span><span class="num">No. 1</span></div>
+            <div class="work-meta"><h3>Project One</h3><div class="side"><span class="yr">2026</span><span class="ty">Web application</span></div></div>
+          </article>
+          <article class="work">
+            <div class="plate p2"><span class="label">Specimen plate</span><span class="num">No. 2</span></div>
+            <div class="work-meta"><h3>Project Two</h3><div class="side"><span class="yr">2025</span><span class="ty">Mobile application</span></div></div>
+          </article>
+          <article class="work">
+            <div class="plate p3"><span class="label">Specimen plate</span><span class="num">No. 3</span></div>
+            <div class="work-meta"><h3>Project Three</h3><div class="side"><span class="yr">2025</span><span class="ty">Website</span></div></div>
+          </article>
+          <article class="work">
+            <div class="plate p4"><span class="label">Specimen plate</span><span class="num">No. 4</span></div>
+            <div class="work-meta"><h3>Project Four</h3><div class="side"><span class="yr">2024</span><span class="ty">Web system &amp; API</span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tutorials: the lessons are listed in js/config.js -->
+      <section class="wrap tut" id="tutorials" aria-labelledby="tut-h">
+        <div class="sec-head">
+          <div class="lead">
+            <p class="label eyebrow">Tutorials</p>
+            <h2 id="tut-h">Watch it built, <span class="muted">step by step.</span></h2>
+          </div>
+          <p>Short videos that follow a real build from the first file to the finished result. Pick a lesson and press play.</p>
+        </div>
+        <div class="tut-filters" id="tut-filters" role="group" aria-label="Filter tutorials by topic"></div>
+        <div class="tut-grid">
+          <div class="player">
+            <div class="stage" id="stage"></div>
+            <div class="lesson-info" id="info"></div>
+          </div>
+          <ol class="lessons" id="lessons" aria-label="Lessons"></ol>
+        </div>
+      </section>
+    </div>
+
+    <!-- Closing block -->
+    <div class="block-end" data-fx>
+      <section class="wrap cta-big" aria-label="Call to action">
+        <h2>One commission away from something that works. <span class="dim">Write to me below.</span></h2>
+      </section>
+
+      <footer class="wrap" id="contact">
+        <div class="foot">
+          <div class="foot-top">
+            <div class="foot-left">
+              <span class="label">&copy; Cecil 2026</span>
+              <button class="btn" type="button" id="copy">Copy email address</button>
+            </div>
+            <div class="foot-cols">
+              <div class="foot-col">
+                <span class="label">Correspondence</span>
+                <!-- EDIT: your email address -->
+                <span class="addr" id="addr">your-email@example.com</span>
+                <span>City, Country</span>
+              </div>
+              <div class="foot-col">
+                <span class="label">Sections</span>
+                <a href="#top">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#tutorials">Tutorials</a>
+              </div>
+              <div class="foot-col">
+                <span class="label">Elsewhere</span>
+                <!-- EDIT: your profile links -->
+                <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <hr class="foot-rule">
+          <div class="foot-bottom">
+            <div>
+              <div class="wordmark">Cecil.</div>
+              <p class="label">Web &amp; App Developer &middot; Anno 2026</p>
+            </div>
+            <a class="btn" href="#top">Back to top</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/tutorials.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/theme-switch.js"></script>
+</body>
+</html>
