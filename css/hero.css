@@ -1,51 +1,32 @@
-/* Hero panels, engraved plate, typed line, and the services ticker */
 /* Hero */
-.hero { padding-top: 6.5rem; }
-.hero-card {
-  display: flex; flex-direction: column; gap: 2.2rem;
-  border: 3px double var(--fg); border-radius: 2.5rem;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  background: transparent;
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  min-height: min(100svh, 68rem);
+  padding-top: clamp(7rem, 12vh, 10rem);
+  padding-bottom: clamp(2.5rem, 6vh, 5rem);
 }
-.hero-left { display: flex; flex-direction: column; gap: 1.6rem; min-width: 0; }
+.hero-card { display: block; border: 0; border-radius: 0; padding: 0; background: transparent; }
+.hero-left { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(1rem, 2.4vh, 1.6rem); min-width: 0; }
 .cta-link { display: inline-flex; align-items: center; gap: 0.7rem; width: fit-content; text-decoration: none; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.85rem; }
 .cta-link svg { width: 1rem; height: 1rem; transition: transform 0.2s; }
 .cta-link:hover svg { transform: translateX(0.3rem); }
 .lede { font-size: 1.3rem; line-height: 1.5; max-width: 26rem; }
 h1 {
-  font-size: clamp(3.3rem, 11.5vw, 9.4rem);
-  line-height: 0.92; letter-spacing: -0.01em; text-transform: uppercase;
+  font-size: clamp(3.5rem, 7.5vw, 7.8rem);
+  line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase;
   min-width: 0;
 }
 @media (min-width: 64rem) {
-  .hero-card { flex-direction: row; align-items: flex-end; justify-content: space-between; }
-  .hero-left { width: 30%; }
-  h1 { text-align: right; }
-  .panel-a { position: sticky; top: 6rem; z-index: 1; }
+  .hero { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .panel-a, .panel-b { min-width: 0; }
+  .panel-b { position: relative; z-index: 2; margin: 0; padding: 0; background: transparent; }
+  h1 { max-width: 9ch; }
 }
-.panel-b { position: relative; z-index: 2; background: var(--bg); padding-top: 2.5rem; padding-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-@media (min-width: 64rem) { .panel-b { margin-top: 2.5rem; padding-bottom: 12vh; } }
-.triplet { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; font-weight: 700; padding-inline: 0.5rem; }
-
-.plate-hero {
-  position: relative; overflow: hidden;
-  border: 4px double var(--fg); border-radius: 2.5rem;
-  background: repeating-linear-gradient(135deg, transparent 0 7px, color-mix(in srgb, var(--fg) 14%, transparent) 7px 8px), var(--bg);
-  padding: clamp(1.25rem, 4vw, 3rem);
-  display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;
-}
-.plate-art { width: min(100%, 50rem); height: auto; display: block; }
-.float-card {
-  background: var(--bg);
-  border: 3px double var(--fg); border-radius: 1.1rem;
-  padding: 1.4rem; max-width: 22rem;
-  display: flex; flex-direction: column; gap: 1.1rem;
-}
-.float-card p { font-size: 1.1rem; line-height: 1.4; }
-.float-card .cta-link { font-size: 0.78rem; }
-@media (min-width: 88rem) { .float-card { position: absolute; right: 3rem; bottom: 3rem; } }
-.fill-paper { fill: var(--bg); } .fill-ink { fill: var(--fg); }
-.stroke-ink { stroke: var(--fg); } .p-line { stroke: var(--fg); }
+.panel-b { min-width: 0; }
+.lede { font-size: clamp(1.15rem, 1.6vw, 1.35rem); }
 
 .typed { display: flex; align-items: baseline; gap: 0.6rem; color: var(--muted); }
 .typed b { color: var(--fg); letter-spacing: 0.14em; font-weight: 700; }

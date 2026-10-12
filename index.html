@@ -9,6 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/tokens.css">
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/work.css">
+  <link rel="stylesheet" href="css/earth.css">
   <link rel="stylesheet" href="css/footer.css">
 
   <script src="js/theme-init.js"></script>
@@ -59,8 +61,8 @@
 
   <main>
     <div class="zone" data-fx>
-    <!-- Hero: two layered panels -->
-    <section class="wrap hero" aria-label="Introduction">
+    <!-- Hero -->
+    <section class="wrap hero" aria-labelledby="hero-title">
       <div class="panel-a">
         <div class="hero-card">
           <div class="hero-left">
@@ -68,51 +70,19 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <p class="label typed" aria-hidden="true">Now making <b><span id="typed">Websites</span><span class="caret">_</span></b></p>
+            <h1 id="hero-title">Web &amp; App Maker.</h1>
             <p class="lede">I am Cecil. I design and build websites and mobile applications that load quickly, read clearly and keep working long after launch.</p>
           </div>
-          <h1>Web &amp; App Maker.</h1>
         </div>
       </div>
 
-      <div class="panel-b" data-fx>
-        <div class="triplet label">
-          <span>Plain to use</span>
-          <span>Quick to load</span>
-          <span>Built to last</span>
-        </div>
-        <div class="plate-hero">
-          <svg class="plate-art" viewBox="0 0 800 460" role="img" aria-label="Engraving of a browser window beside a mobile phone">
-            <defs>
-              <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" class="p-line" stroke-width="1.5"/></pattern>
-              <pattern id="hatch2" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="5" class="p-line" stroke-width="1.1"/></pattern>
-            </defs>
-            <rect x="70" y="60" width="480" height="330" rx="8" class="fill-paper stroke-ink" stroke-width="3"/>
-            <path d="M70 98V68a8 8 0 0 1 8-8h464a8 8 0 0 1 8 8v30z" class="fill-ink"/>
-            <circle cx="92" cy="79" r="5" class="fill-paper"/><circle cx="110" cy="79" r="5" class="fill-paper"/><circle cx="128" cy="79" r="5" class="fill-paper"/>
-            <rect x="160" y="70" width="240" height="18" rx="9" class="fill-paper" opacity="0.3"/>
-            <rect x="100" y="132" width="250" height="22" class="fill-ink"/>
-            <rect x="100" y="166" width="180" height="22" class="fill-ink"/>
-            <rect x="100" y="208" width="270" height="8" class="fill-ink" opacity="0.55"/>
-            <rect x="100" y="226" width="240" height="8" class="fill-ink" opacity="0.55"/>
-            <rect x="100" y="244" width="255" height="8" class="fill-ink" opacity="0.55"/>
-            <rect x="100" y="278" width="110" height="32" rx="16" class="fill-ink"/>
-            <rect x="385" y="124" width="135" height="150" fill="url(#hatch)" class="stroke-ink" stroke-width="2"/>
-            <rect x="100" y="332" width="420" height="36" fill="url(#hatch2)" class="stroke-ink" stroke-width="2"/>
-            <rect x="520" y="130" width="190" height="300" rx="26" class="fill-paper stroke-ink" stroke-width="3"/>
-            <rect x="585" y="146" width="60" height="9" rx="4.5" class="fill-ink"/>
-            <rect x="545" y="184" width="120" height="16" class="fill-ink"/>
-            <rect x="545" y="208" width="88" height="16" class="fill-ink"/>
-            <rect x="545" y="246" width="140" height="82" fill="url(#hatch)" class="stroke-ink" stroke-width="2"/>
-            <rect x="545" y="346" width="130" height="7" class="fill-ink" opacity="0.55"/>
-            <rect x="545" y="362" width="100" height="7" class="fill-ink" opacity="0.55"/>
-            <rect x="545" y="386" width="140" height="28" rx="14" class="fill-ink"/>
-          </svg>
-          <aside class="float-card">
-            <p>From the first sketch to the final release, one developer sees the whole job through.</p>
-            <a class="cta-link" href="#work">View selected work
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </aside>
+      <div class="panel-b earth-panel">
+        <div class="earth-orbit" id="earth-orbit">
+          <canvas class="earth-canvas" id="earth-canvas" tabindex="0" role="img" aria-label="Interactive, realistic Earth. Drag to rotate or use the arrow keys.">An interactive Earth globe.</canvas>
+          <div class="earth-fallback" id="earth-fallback" aria-hidden="true" hidden></div>
+          <div class="earth-orbit-top" aria-hidden="true"><span>PLANET EARTH</span><span>01 / 01</span></div>
+          <div class="earth-orbit-bottom" aria-hidden="true"><span>LIVE ORBIT</span><span>DRAG TO ROTATE</span></div>
+          <span class="earth-status" id="earth-status" role="status">Loading Earth imagery</span>
         </div>
       </div>
     </section>
@@ -392,5 +362,6 @@
 <script src="js/particles.js"></script>
 <script src="js/motion.js"></script>
 <script src="js/theme-switch.js"></script>
+<script src="js/earth.js"></script>
 </body>
 </html>

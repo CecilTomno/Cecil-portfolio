@@ -1,0 +1,97 @@
+/* Real-texture Earth in the hero */
+.earth-orbit {
+  --orbit-ink: #e9eff8;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: clamp(24rem, 46vw, 43rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
+  border-radius: clamp(1.4rem, 3vw, 2.6rem);
+  background:
+    radial-gradient(ellipse at 50% 47%, rgba(26, 54, 85, 0.62), transparent 56%),
+    radial-gradient(circle at 17% 22%, rgba(191, 218, 255, 0.48) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 72% 16%, rgba(191, 218, 255, 0.34) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 82% 67%, rgba(191, 218, 255, 0.38) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 24% 78%, rgba(191, 218, 255, 0.3) 0 1px, transparent 1.7px),
+    linear-gradient(145deg, #09111d, #03060b 72%);
+  background-size: auto, 100% 100%, 100% 100%, 100% 100%, 100% 100%, auto;
+  box-shadow: 0 1.5rem 4rem rgba(4, 12, 25, 0.14), inset 0 0 4rem rgba(50, 93, 148, 0.08);
+}
+.earth-orbit::before, .earth-orbit::after { position: absolute; z-index: 2; inset: 0; border-radius: inherit; content: ""; pointer-events: none; }
+.earth-orbit::before { background: radial-gradient(ellipse at center, transparent 47%, rgba(1, 4, 8, 0.22) 100%); }
+.earth-orbit::after { border: 1px solid rgba(219, 232, 251, 0.07); }
+.earth-canvas {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+  outline: none;
+}
+.earth-canvas:active { cursor: grabbing; }
+.earth-canvas:focus-visible { outline: 2px solid #9ec8ff; outline-offset: -5px; border-radius: inherit; }
+.earth-orbit-top, .earth-orbit-bottom {
+  position: absolute;
+  z-index: 3;
+  left: clamp(1rem, 3vw, 1.7rem);
+  right: clamp(1rem, 3vw, 1.7rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: var(--orbit-ink);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.earth-orbit-top { top: clamp(1rem, 3vw, 1.7rem); }
+.earth-orbit-bottom { bottom: clamp(1rem, 3vw, 1.7rem); color: rgba(233, 239, 248, 0.68); }
+.earth-orbit-top span:last-child, .earth-orbit-bottom span:last-child { text-align: right; }
+.earth-status {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 3.5rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid rgba(233, 239, 248, 0.2);
+  border-radius: 999px;
+  background: rgba(3, 8, 15, 0.78);
+  color: var(--orbit-ink);
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.earth-fallback {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: min(78%, 34rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 32% 25%, rgba(255, 255, 255, 0.25), transparent 43%),
+    radial-gradient(ellipse at 64% 68%, transparent 44%, rgba(0, 0, 0, 0.82) 100%),
+    url("https://cdn.jsdelivr.net/npm/three@0.186.0/examples/textures/planets/earth_atmos_2048.jpg") center / auto 100% no-repeat,
+    #122536;
+  box-shadow: inset -1.5rem -0.4rem 2rem rgba(0, 0, 0, 0.56), 0 0 3rem rgba(64, 143, 255, 0.32);
+  transform: translate(-50%, -50%);
+}
+.earth-orbit.fallback .earth-canvas { display: none; }
+.earth-orbit.fallback .earth-fallback { display: block; }
+@media (max-width: 63.99rem) {
+  .earth-orbit { width: min(100%, 42rem); height: clamp(22rem, 95vw, 38rem); margin-inline: auto; }
+  .hero { gap: 2rem; }
+  h1 { max-width: 10ch; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .earth-canvas { scroll-behavior: auto; }
+}
