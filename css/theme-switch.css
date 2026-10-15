@@ -1,4 +1,4 @@
-/* Lamp button, circular reveal, and the lantern glow that follows the pointer in dark mode */
+/* Simple theme switch with a steady lamp icon. */
 .pill-actions { display: flex; align-items: center; gap: 0.5rem; }
 .mode { width: 2.6rem; height: 2.6rem; flex: none; display: grid; place-items: center; border: 1px solid var(--fg); border-radius: 50%; background: transparent; color: var(--fg); cursor: pointer; }
 .mode svg { width: 1.55rem; height: 1.55rem; overflow: visible; }
@@ -8,10 +8,3 @@
 :root[data-mode="dark"] .mode .flame { animation: none; }
 :root[data-mode="dark"] .mode .flame, :root[data-mode="dark"] .mode .rays { opacity: 0; transform: scale(0.4); }
 @keyframes flick { 0%, 100% { transform: scale(1, 1); } 35% { transform: scale(0.93, 1.08); } 70% { transform: scale(1.05, 0.95); } }
-.lantern { position: fixed; left: -20rem; top: -20rem; width: 40rem; height: 40rem; z-index: 80; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.07) 45%, transparent); mix-blend-mode: screen; will-change: transform; }
-:root[data-mode="dark"] .lantern { opacity: 1; }
-.burst { position: fixed; width: 256px; height: 256px; z-index: 600; pointer-events: none; border-radius: 50%; background: radial-gradient(circle closest-side, transparent 78%, var(--ring) 95%, transparent 100%); will-change: transform, opacity; }
-.veil { position: fixed; inset: 0; z-index: 600; pointer-events: none; }
-::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-::view-transition-old(root) { z-index: 1; }
-::view-transition-new(root) { z-index: 2; }

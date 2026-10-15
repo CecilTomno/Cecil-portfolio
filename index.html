@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/work.css">
-  <link rel="stylesheet" href="css/earth.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/paper.css">
 
@@ -30,7 +29,6 @@
 <body>
 <script src="js/loader.js"></script>
 <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
-<div class="lantern" id="lantern" aria-hidden="true"></div>
 
 <div class="page">
 
@@ -77,22 +75,25 @@
         </div>
       </div>
 
-      <div class="panel-b earth-panel">
-        <div class="earth-orbit" id="earth-orbit">
-          <canvas class="earth-canvas" id="earth-canvas" tabindex="0" role="img" aria-label="Interactive, realistic Earth. Drag to rotate or use the arrow keys.">An interactive Earth globe.</canvas>
-          <div class="earth-fallback" id="earth-fallback" aria-hidden="true" hidden></div>
-          <nav class="earth-markers" aria-label="Explore portfolio sections on the Earth">
-            <a class="earth-marker" href="#about" data-lat="7" data-lon="22" aria-label="Go to About" hidden><span class="earth-marker-id">01</span><span>ABOUT</span></a>
-            <a class="earth-marker" href="#services" data-lat="47" data-lon="12" aria-label="Go to Services" hidden><span class="earth-marker-id">02</span><span>SERVICES</span></a>
-            <a class="earth-marker" href="#skills" data-lat="18" data-lon="82" aria-label="Go to Skills" hidden><span class="earth-marker-id">03</span><span>SKILLS</span></a>
-            <a class="earth-marker" href="#work" data-lat="-18" data-lon="-48" aria-label="Go to Work" hidden><span class="earth-marker-id">04</span><span>WORK</span></a>
-            <a class="earth-marker" href="#tutorials" data-lat="39" data-lon="-102" aria-label="Go to Tutorials" hidden><span class="earth-marker-id">05</span><span>TUTORIALS</span></a>
-            <a class="earth-marker" href="#contact" data-lat="-28" data-lon="135" aria-label="Go to Contact" hidden><span class="earth-marker-id">06</span><span>CONTACT</span></a>
-          </nav>
-          <div class="earth-orbit-top" aria-hidden="true"><span>PLANET EARTH</span><span>01 / 01</span></div>
-          <div class="earth-orbit-bottom" aria-hidden="true"><span>LIVE ORBIT</span><span>DRAG TO ROTATE</span></div>
-          <span class="earth-status" id="earth-status" role="status">Loading Earth imagery</span>
-        </div>
+      <div class="panel-b">
+        <nav class="studio-map" aria-label="Explore Cecil's portfolio">
+          <div class="map-top">
+            <div>
+              <span class="map-kicker">CECIL'S STUDIO · QUICK INDEX</span>
+              <h2>Pick a path.</h2>
+            </div>
+            <span class="map-count"><b>06</b><small>LINKED<br>SECTIONS</small></span>
+          </div>
+          <div class="map-links">
+            <a class="map-link" href="#about"><span class="map-link-top"><span>01 / PROFILE</span><span aria-hidden="true">↗</span></span><strong>About</strong><span class="map-link-note">Meet the maker</span></a>
+            <a class="map-link" href="#skills"><span class="map-link-top"><span>02 / TOOLKIT</span><span aria-hidden="true">↗</span></span><strong>Skills</strong><span class="map-link-note">What I build with</span></a>
+            <a class="map-link" href="#services"><span class="map-link-top"><span>03 / OFFER</span><span aria-hidden="true">↗</span></span><strong>Services</strong><span class="map-link-note">What I can make</span></a>
+            <a class="map-link" href="#work"><span class="map-link-top"><span>04 / SELECTED WORK</span><span aria-hidden="true">↗</span></span><strong>Projects</strong><span class="map-link-note">Things made to last</span></a>
+            <a class="map-link" href="#process"><span class="map-link-top"><span>05 / METHOD</span><span aria-hidden="true">↗</span></span><strong>Process</strong><span class="map-link-note">Brief to launch</span></a>
+            <a class="map-link" href="#tutorials"><span class="map-link-top"><span>06 / FIELD NOTES</span><span aria-hidden="true">↗</span></span><strong>Tutorials</strong><span class="map-link-note">Learn by building</span></a>
+          </div>
+          <div class="map-foot"><span>DESIGN</span><i></i><span>BUILD</span><i></i><span>SHIP</span><span class="map-foot-note">CHOOSE A SECTION TO EXPLORE</span></div>
+        </nav>
       </div>
     </section>
 
@@ -371,6 +372,5 @@
 <script src="js/particles.js"></script>
 <script src="js/motion.js"></script>
 <script src="js/theme-switch.js"></script>
-<script src="js/earth.js"></script>
 </body>
 </html>
