@@ -1,34 +1,34 @@
-/* Warm paper stock, hand-set type and offset ink details. */
+/* White paper, black ink and quiet grayscale details. */
 :root {
-  --bg: #f5f1e7;
-  --fg: #20243a;
-  --muted: #68717b;
-  --blk: #e2ece8;
-  --blk-2: #f8f5ec;
-  --on-blk: #20243a;
-  --paper: #fffdf6;
-  --paper-alt: #eaf0ec;
-  --paper-edge: #30344a;
-  --paper-shadow: #d9a1a0;
-  --accent-red: #d65f68;
-  --accent-blue: #56879c;
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --blk: #f1f1f1;
+  --blk-2: #e8e8e8;
+  --on-blk: #111111;
+  --paper: #ffffff;
+  --paper-alt: #f7f7f7;
+  --paper-edge: #111111;
+  --paper-shadow: #c9c9c9;
+  --accent-red: #222222;
+  --accent-blue: #555555;
   --display: "Caveat", "Segoe Print", cursive;
   --body: "DM Sans", "Trebuchet MS", sans-serif;
   color-scheme: light;
 }
 :root[data-mode="dark"] {
-  --bg: #20232d;
-  --fg: #f5efdf;
-  --muted: #c2c3bd;
-  --blk: #2e3940;
-  --blk-2: #29323a;
-  --on-blk: #f5efdf;
-  --paper: #30343e;
-  --paper-alt: #343e43;
-  --paper-edge: #e8dfcb;
-  --paper-shadow: #76545a;
-  --accent-red: #ee9290;
-  --accent-blue: #91b9c6;
+  --bg: #171717;
+  --fg: #f5f5f5;
+  --muted: #b7b7b7;
+  --blk: #252525;
+  --blk-2: #202020;
+  --on-blk: #f5f5f5;
+  --paper: #222222;
+  --paper-alt: #292929;
+  --paper-edge: #eeeeee;
+  --paper-shadow: #080808;
+  --accent-red: #dedede;
+  --accent-blue: #aaaaaa;
   color-scheme: dark;
 }
 
@@ -70,7 +70,7 @@ h2, h3 { letter-spacing: 0; }
   font-weight: 700;
   letter-spacing: 0.09em;
 }
-.pill .btn:hover, .btn:hover { background: var(--accent-red); border-color: var(--accent-red); color: #fffdf6; }
+.pill .btn:hover, .btn:hover { background: var(--accent-red); border-color: var(--accent-red); color: var(--bg); }
 .mode { border-color: var(--paper-edge); border-radius: 0.55rem; background: var(--paper); box-shadow: 2px 2px 0 color-mix(in srgb, var(--accent-blue) 55%, transparent); }
 .mode:hover { background: var(--accent-blue); color: #fff; }
 
@@ -82,7 +82,7 @@ h2, h3 { letter-spacing: 0; }
   border: 1.5px solid var(--paper-edge);
   border-radius: 0.45rem 0.7rem 0.4rem 0.65rem;
   background: var(--paper);
-  box-shadow: 7px 8px 0 var(--paper-shadow), inset 0 0 28px color-mix(in srgb, #fff 60%, transparent);
+  box-shadow: 7px 8px 0 var(--paper-shadow), inset 0 0 28px color-mix(in srgb, var(--paper-edge) 4%, transparent);
   transform: rotate(-0.45deg);
 }
 .hero-card::before {
@@ -125,7 +125,7 @@ h1 {
     linear-gradient(color-mix(in srgb, var(--accent-blue) 8%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 8%, transparent) 1px, transparent 1px);
   background-size: 18px 18px, 2rem 2rem, 2rem 2rem;
-  box-shadow: 7px 8px 0 var(--accent-blue), 0 1rem 2.5rem rgba(22, 36, 46, 0.12);
+  box-shadow: 7px 8px 0 var(--accent-blue), 0 1rem 2.5rem rgba(0, 0, 0, 0.12);
   transform: rotate(0.35deg);
 }
 .studio-map::before {
@@ -200,8 +200,8 @@ h1 {
 .eyebrow::before { width: 0.5rem; height: 0.5rem; background: var(--accent-red); border-radius: 50%; transform: none; }
 .skill-grid { gap: 1.1rem; border: 0; }
 .skill {
-  --c: var(--accent-blue);
-  --t: #fffdf6;
+  --c: var(--fg);
+  --t: var(--bg);
   min-height: 8.6rem;
   border: 1px solid var(--paper-edge);
   border-radius: 0.2rem 0.35rem 0.22rem 0.3rem;
@@ -282,10 +282,10 @@ h1 {
   background: var(--paper);
   box-shadow: 3px 4px 0 color-mix(in srgb, var(--accent-blue) 45%, transparent);
 }
-.lesson[aria-current="true"] { background: var(--accent-blue); color: #fffdf6; }
+.lesson[aria-current="true"] { background: var(--accent-blue); color: var(--bg); }
 .lesson:hover { box-shadow: 4px 5px 0 var(--accent-red); }
 .chip { border: 1px solid var(--paper-edge); border-radius: 0.2rem; background: var(--paper); }
-.chip[aria-pressed="true"], .chip:hover { background: var(--accent-blue); color: #fffdf6; }
+.chip[aria-pressed="true"], .chip:hover { background: var(--accent-blue); color: var(--bg); }
 
 .block-end {
   margin-top: -1.5rem;
