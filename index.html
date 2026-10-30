@@ -76,24 +76,25 @@
       </div>
 
       <div class="panel-b">
-        <nav class="studio-map" aria-label="Explore Cecil's portfolio">
-          <div class="map-top">
-            <div>
-              <span class="map-kicker">CECIL'S STUDIO · QUICK INDEX</span>
-              <h2>Pick a path.</h2>
-            </div>
-            <span class="map-count"><b>06</b><small>LINKED<br>SECTIONS</small></span>
+        <figure class="bear-stage" id="bear-stage" aria-label="A short looping video of a plush teddy bear waving hello.">
+          <div class="bear-stage-top">
+            <span class="bear-stage-title">A little hello.</span>
+            <span class="bear-stage-label">CECIL'S STUDIO · TEDDY REEL</span>
           </div>
-          <div class="map-links">
-            <a class="map-link" href="#about"><span class="map-link-top"><span>01 / PROFILE</span><span aria-hidden="true">↗</span></span><strong>About</strong><span class="map-link-note">Meet the maker</span></a>
-            <a class="map-link" href="#skills"><span class="map-link-top"><span>02 / TOOLKIT</span><span aria-hidden="true">↗</span></span><strong>Skills</strong><span class="map-link-note">What I build with</span></a>
-            <a class="map-link" href="#services"><span class="map-link-top"><span>03 / OFFER</span><span aria-hidden="true">↗</span></span><strong>Services</strong><span class="map-link-note">What I can make</span></a>
-            <a class="map-link" href="#work"><span class="map-link-top"><span>04 / SELECTED WORK</span><span aria-hidden="true">↗</span></span><strong>Projects</strong><span class="map-link-note">Things made to last</span></a>
-            <a class="map-link" href="#process"><span class="map-link-top"><span>05 / METHOD</span><span aria-hidden="true">↗</span></span><strong>Process</strong><span class="map-link-note">Brief to launch</span></a>
-            <a class="map-link" href="#tutorials"><span class="map-link-top"><span>06 / FIELD NOTES</span><span aria-hidden="true">↗</span></span><strong>Tutorials</strong><span class="map-link-note">Learn by building</span></a>
+          <div class="bear-window">
+            <img class="bear-poster" src="assets/teddy-poster.png" alt="" width="800" height="450">
+            <video class="bear-video" id="bear-video" autoplay muted loop playsinline preload="none" poster="assets/teddy-poster.png" aria-hidden="true" tabindex="-1">
+              <source data-src="assets/teddy-wave.mp4" type="video/mp4">
+            </video>
+            <button class="bear-control" id="bear-control" type="button" aria-label="Pause teddy-bear video" title="Pause teddy-bear video" hidden>
+              <svg class="bear-icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+              <svg class="bear-icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 10 6-10 6z"/></svg>
+            </button>
           </div>
-          <div class="map-foot"><span>DESIGN</span><i></i><span>BUILD</span><i></i><span>SHIP</span><span class="map-foot-note">CHOOSE A SECTION TO EXPLORE</span></div>
-        </nav>
+          <figcaption class="bear-caption">
+            A little wave to welcome you in.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -371,6 +372,7 @@
 <script src="js/tutorials.js"></script>
 <script src="js/particles.js"></script>
 <script src="js/motion.js"></script>
+<script src="js/bear-hero.js"></script>
 <script src="js/theme-switch.js"></script>
 </body>
 </html>
